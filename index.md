@@ -58,16 +58,11 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Afternoon    | ABN on your own data |         |
 |              | Wrap up discussion                               |         |
 
+The hands-on exercices of the workshop is based on two open access datasets that can be downladed here:
+- [adg dataset](source/data/pig_adg.csv)
+- [salmonela dataset](source/data/sal_outbrk.csv)
 
-
-| Time         | Topic                          | Material|
-|--------------|--------------------------------|---------|
-| Morning      | Welcome & info                 | [Presentation](source/Presentations/Workshop_schedule.pdf)|
-| Afternoon    | Bayesian Network in a Nutshell | [Presentation](source/Presentations/gk_intro.pdf)|
-| 09:30 - 10:30| Hands-on exercises              | [Presentation](source/Presentations/Hands-on_exercise.pdf) / [Hands-on exercises](Excercise_SVEPM.html) / [Zip folder](source/Material/HO1.zip)|
-| 10:30 - 11:00| <span style="color:blue"> Coffee break text</span> ||
-| 11:00 - 11:30| Advanced ABN modelling|[Presentation](source/Presentations/gk_advance.pdf) / [Hands-on exercises](Excercise_advances.html) / [Zip folder](source/Material/HO2.zip)|
-| 11:30 - 12:00| Wrap-up and discussions | [Presentation](source/Presentations/Discussion.pdf) |
+The two dataset are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).s
 
 #  Selected list of reference papers
 
