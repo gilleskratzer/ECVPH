@@ -31,17 +31,20 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |--------------|--------------------------------|---------|
 | Morning      | Welcome & info (housekeeping, learning objectives)||
 |              | Talk on an ABN example         |         |
-| Afternoon    | Bayesian Network in a Nutshell |         |
-|              |                                |         |
+| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)||
+|         | Hands-on exercices ||
+|              | Regression models        |         |
 
 **Wednesday, the 08.05.2019**
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| Morning      | Welcome & info (housekeeping, learning objectives)||
-|              | Talk on an ABN example         |         |
-| Afternoon    | Bayesian Network in a Nutshell |         |
-|              |                                |         |
+| Morning      | Methods for risk factor analysis||
+|              | Hands-on exercices         |         |
+| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| Afternoon    | ABN in a nutshell |         |
+|              | Hands-on exercices          |         |
 
 
 
@@ -49,10 +52,11 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| Morning      | Welcome & info (housekeeping, learning objectives)||
-|              | Talk on an ABN example         |         |
-| Afternoon    | Bayesian Network in a Nutshell |         |
-|              |                                |         |
+| Morning      | Advanced methods with ABN||
+|              | Hands-on exercices         |         |
+| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| Afternoon    | ABN on your own data |         |
+|              | Wrap up discussion                               |         |
 
 
 
@@ -65,8 +69,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | 11:00 - 11:30| Advanced ABN modelling|[Presentation](source/Presentations/gk_advance.pdf) / [Hands-on exercises](Excercise_advances.html) / [Zip folder](source/Material/HO2.zip)|
 | 11:30 - 12:00| Wrap-up and discussions | [Presentation](source/Presentations/Discussion.pdf) |
 
-
-Selected list of reference papers:
+#  Selected list of reference papers
 
 *Application papers*:
 - [Comin et al.](https://www.sciencedirect.com/science/article/pii/S0167587718304665?via%3Dihub#kwd0010)
@@ -74,4 +77,4 @@ Selected list of reference papers:
 - [Hartnack et al.](https://bmcvetres.biomedcentral.com/articles/10.1186/s12917-016-0649-0)
 
 *Background papers:*
-- [Lewis et al.]()
+- [Lewis et al.](https://ete-online.biomedcentral.com/articles/10.1186/1742-7622-10-4)
