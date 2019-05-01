@@ -5,7 +5,7 @@ The ECVPH workshop on *Additive Bayesian Networks as an alternative for risk fac
 
 **When:** May the 7-9th 2019
 
-**Where:** Zurich, Switzerland. 
+**Where:** Zurich, Switzerland. Room: **BIN-1-E.01 EV**
 
 **Requirements:** Personal laptop. Basic statistics and basic knowledge of R. No prior knowledge about graph theory or Bayesian statistics is needed. Please follow the getting started [checklist](getting_started.md)
 
@@ -29,17 +29,42 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| 09:00 - 09:10| Welcome & info                 | [Presentation](source/Presentations/Workshop_schedule.pdf)|
-| 09:10 - 09:30| Bayesian Network in a Nutshell | [Presentation](source/Presentations/gk_intro.pdf)|
+| Morning      | Welcome & info (housekeeping, learning objectives)||
+|              | Talk on an ABN example         |         |
+| Afternoon    | Bayesian Network in a Nutshell |         |
+|              |                                |         |
+
+**Wednesday, the 08.05.2019**
+
+| Time         | Topic                          | Material|
+|--------------|--------------------------------|---------|
+| Morning      | Welcome & info (housekeeping, learning objectives)||
+|              | Talk on an ABN example         |         |
+| Afternoon    | Bayesian Network in a Nutshell |         |
+|              |                                |         |
+
+
+
+**Thursday, the 09.05.2019**
+
+| Time         | Topic                          | Material|
+|--------------|--------------------------------|---------|
+| Morning      | Welcome & info (housekeeping, learning objectives)||
+|              | Talk on an ABN example         |         |
+| Afternoon    | Bayesian Network in a Nutshell |         |
+|              |                                |         |
+
+
+
+| Time         | Topic                          | Material|
+|--------------|--------------------------------|---------|
+| Morning      | Welcome & info                 | [Presentation](source/Presentations/Workshop_schedule.pdf)|
+| Afternoon    | Bayesian Network in a Nutshell | [Presentation](source/Presentations/gk_intro.pdf)|
 | 09:30 - 10:30| Hands-on exercises              | [Presentation](source/Presentations/Hands-on_exercise.pdf) / [Hands-on exercises](Excercise_SVEPM.html) / [Zip folder](source/Material/HO1.zip)|
 | 10:30 - 11:00| <span style="color:blue"> Coffee break text</span> ||
 | 11:00 - 11:30| Advanced ABN modelling|[Presentation](source/Presentations/gk_advance.pdf) / [Hands-on exercises](Excercise_advances.html) / [Zip folder](source/Material/HO2.zip)|
 | 11:30 - 12:00| Wrap-up and discussions | [Presentation](source/Presentations/Discussion.pdf) |
 
-**Wednesday, the 08.05.2019**
-
-
-**Thursday, the 09.05.2019**
 
 Selected list of reference papers:
 
@@ -49,3 +74,4 @@ Selected list of reference papers:
 - [Hartnack et al.](https://bmcvetres.biomedcentral.com/articles/10.1186/s12917-016-0649-0)
 
 *Background papers:*
+- [Lewis et al.]()
