@@ -65,7 +65,7 @@ The hands-on exercices of the workshop is based on two open access datasets that
 
 The two dataset are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).
 
-#  Selected list of reference papers
+# Selected list of reference papers
 
 *Application papers*:
 
