@@ -59,17 +59,20 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |              | Wrap up discussion                               |         |
 
 The hands-on exercices of the workshop is based on two open access datasets that can be downladed here:
+
 - [adg dataset](source/data/pig_adg.csv)
 - [salmonela dataset](source/data/sal_outbrk.csv)
 
-The two dataset are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).s
+The two dataset are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).
 
 #  Selected list of reference papers
 
 *Application papers*:
+
 - [Comin et al.](https://www.sciencedirect.com/science/article/pii/S0167587718304665?via%3Dihub#kwd0010)
 - [Ruchti et al.](https://www.sciencedirect.com/science/article/pii/S0167587718306159?via%3Dihub)
 - [Hartnack et al.](https://bmcvetres.biomedcentral.com/articles/10.1186/s12917-016-0649-0)
 
 *Background papers:*
+
 - [Lewis et al.](https://ete-online.biomedcentral.com/articles/10.1186/1742-7622-10-4)
