@@ -25,7 +25,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 # Schedule
 
-**Tuesday, the 07.05.2019**
+**Tuesday 07.05.2019**
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
@@ -36,7 +36,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |         | Hands-on exercices ||
 |              | Regression models        |         |
 
-**Wednesday, the 08.05.2019**
+**Wednesday 08.05.2019**
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
@@ -48,7 +48,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 
 
-**Thursday, the 09.05.2019**
+**Thursday 09.05.2019**
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
