@@ -1,5 +1,5 @@
 
-The ECVPH workshop on *Additive Bayesian Networks as an alternative for risk factor studies* using the R package [Additive Bayesian Networks](https://cran.r-project.org/package=abn) is a funded training workshop by The European College of Veterinary Public Health ([ECVPH](https://ecvph.org/meetings-events/ecvph-residents-workshop-abn-modeling)) from May 7-9th, 2019 in Zurich (Switzerland).
+The ECVPH workshop entitled **Additive Bayesian Networks as an alternative for risk factor studies** using the R package [Additive Bayesian Networks](https://cran.r-project.org/package=abn) is a funded training workshop by The European College of Veterinary Public Health ([ECVPH](https://ecvph.org/meetings-events/ecvph-residents-workshop-abn-modeling)) from May 7-9th, 2019 in Zurich (Switzerland).
 
 # General information
 
@@ -31,7 +31,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |--------------|--------------------------------|---------|
 | Morning      | Welcome & info (housekeeping, learning objectives)||
 |              | Talk on an ABN example         |         |
-| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)||
 |         | Hands-on exercices ||
 |              | Regression models        |         |
@@ -42,7 +42,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |--------------|--------------------------------|---------|
 | Morning      | Methods for risk factor analysis||
 |              | Hands-on exercices         |         |
-| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN in a nutshell |         |
 |              | Hands-on exercices          |         |
 
@@ -54,7 +54,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |--------------|--------------------------------|---------|
 | Morning      | Advanced methods with ABN||
 |              | Hands-on exercices         |         |
-| 12:30 - 13:30| <span style="color:blue"> Lunch text</span> ||
+| 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN on your own data |         |
 |              | Wrap up discussion                               |         |
 
