@@ -21,7 +21,7 @@ Despite the fact that the theoretical foundations of ABN have been well establis
 Networks modelling
 - To learn how to set up and interpret an Additive Bayesian Network model for
 multivariate analysis of animal health data using the R package [abn](https://cran.r-project.org/package=abn)
-- To learn more about alternative methodologies coming from machine learning such as RandomForest
+- To learn more about alternative methodologies for risk factor analysis coming from machine learning such as stepAIC, RandomForest, ensemble methods, feature exctraction
 
 # Schedule
 
