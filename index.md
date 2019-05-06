@@ -54,7 +54,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| Morning      | Advanced methods with ABN||
+| Morning      | Advanced methods with ABN| [Presentation](source/Presentations/gk_advanced_abn.pdf) |
 |              | Hands-on exercises         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN on your own data |         |
