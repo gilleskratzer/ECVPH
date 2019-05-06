@@ -30,7 +30,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
 | Morning      | Welcome & info (housekeeping, learning objectives)| [Presentation](source/Presentations/gk_welcome.pdf) |
-|              | Talk on an ABN example         |         |
+|              | Talk on an ABN example         | [Presentation](source/Presentations/abn_talk_May_2019.pdf)        |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)| [Test](test_install.html) |
 |         | Warm up hands-on exercises | [Exercice Salmonella](exo_descr_stats_salm.html) <br>  [Solution Salmonella](sol_descr_stats_salm.html) <br> [Exercice PIG](exo_descr_stats_pig_adg.html) <br> [Solution PIG](sol_descr_stats_pig_adg.html) <br> [Data](source/data.zip) |
@@ -65,7 +65,7 @@ The hands-on exercises of the workshop is based on two open access datasets that
 - [adg dataset](source/data/pig_adg.csv)
 - [salmonela dataset](source/data/sal_outbrk.csv)
 
-The two dataset are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).
+The datasets are described in [Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)](http://projects.upei.ca/ver/).
 
 # Selected list of reference papers
 
