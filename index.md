@@ -33,8 +33,8 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |              | Talk on an ABN example         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)| [Test](test_install.html) |
-|         | Warm up Hands-on exercises | [Exercice Salmonella](exo_descr_stats_salm.html) <br>  [Solution Salmonella](sol_descr_stats_salm.html) / [Exercice PIG](exo_descr_stats_pig_adg.html) / [Solution PIG](sol_descr_stats_pig_adg.html) / [Data](source/data.zip) |
-|              | Regression models        |         |
+|         | Warm up Hands-on exercises | [Exercice Salmonella](exo_descr_stats_salm.html) <br>  [Solution Salmonella](sol_descr_stats_salm.html) <br> [Exercice PIG](exo_descr_stats_pig_adg.html) <br> [Solution PIG](sol_descr_stats_pig_adg.html) <br> [Data](source/data.zip) |
+|              | Regression models        | [Presentation](source/Presentations/gk_welcome.pdf) |
 
 **Wednesday 08.05.2019**
 
