@@ -46,9 +46,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Afternoon    | ABN in a nutshell |  [Presentation](source/Presentations/gk_intro_abn.pdf)       |
 |              | Hands-on exercises          | [Exercice](exo_Excercise_SVEPM.html) <br>  [Solution](sol_Excercise_SVEPM.html) <br> [File](source/HO1.zip)      |
 
-
 *Social event: 18:00 Apéro. 19:00 Dinner*
-
 
 **Thursday 09.05.2019**
 
