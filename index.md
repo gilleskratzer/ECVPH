@@ -29,7 +29,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| Morning      | Welcome & info (housekeeping, learning objectives)||
+| Morning      | Welcome & info (housekeeping, learning objectives)| [Presentation](source/Presentations/gk_welcome.pdf) |
 |              | Talk on an ABN example         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)||
