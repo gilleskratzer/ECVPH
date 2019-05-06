@@ -44,7 +44,7 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 |              | Hands-on exercises         | [Exercice](exo_risk_fact_ana.html) <br>  [Solution Salmonella](sol_risk_fact_ana.html)        |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN in a nutshell |  [Presentation](source/Presentations/gk_intro_abn.pdf)       |
-|              | Hands-on exercises          |         |
+|              | Hands-on exercises          | [Exercice](exo_Excercise_SVEPM.html) <br>  [Solution Salmonella](sol_Excercise_SVEPM.html)  [File](source/HO1.zip)      |
 
 
 *Social event: 18:00 Apéro. 19:00 Dinner*
