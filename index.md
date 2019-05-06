@@ -21,7 +21,7 @@ Despite the fact that the theoretical foundations of ABN have been well establis
 Networks modelling
 - To learn how to set up and interpret an Additive Bayesian Network model for
 multivariate analysis of animal health data using the R package [abn](https://cran.r-project.org/package=abn)
-- To learn more about alternative methodologies for risk factor analysis coming from machine learning such as stepAIC, RandomForest, ensemble methods, feature exctraction
+- To learn more about alternative methodologies for risk factor analysis coming from machine learning such as stepAIC, RandomForest, ensemble methods, feature extraction
 
 # Schedule
 
@@ -32,8 +32,12 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Morning      | Welcome & info (housekeeping, learning objectives)| [Presentation](source/Presentations/gk_welcome.pdf) |
 |              | Talk on an ABN example         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
-| Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)| test_install.html |
-|         | Hands-on exercices ||
+| Afternoon    | Check installation R (Rstudio, RGraphiz, INLA, JAGS)| [Test](test_install.html) |
+|         | Warm up Hands-on exercises | [Exercice Salmonella](exo_descr_stats_salm.html) 
+                                         [Solution Salmonella](sol_descr_stats_salm.html) 
+                                         [Exercice PIG](exo_descr_stats_pig_adg.html)  
+                                         [Solution PIG](sol_descr_stats_pig_adg.html) 
+                                         [Data](source/data.zip) |
 |              | Regression models        |         |
 
 **Wednesday 08.05.2019**
@@ -41,10 +45,10 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
 | Morning      | Methods for risk factor analysis||
-|              | Hands-on exercices         |         |
+|              | Hands-on exercises         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN in a nutshell |         |
-|              | Hands-on exercices          |         |
+|              | Hands-on exercises          |         |
 
 
 
@@ -53,12 +57,12 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
 | Morning      | Advanced methods with ABN||
-|              | Hands-on exercices         |         |
+|              | Hands-on exercises         |         |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
 | Afternoon    | ABN on your own data |         |
 |              | Wrap up discussion                               |         |
 
-The hands-on exercices of the workshop is based on two open access datasets that can be downladed here:
+The hands-on exercises of the workshop is based on two open access datasets that can be downloaded here:
 
 - [adg dataset](source/data/pig_adg.csv)
 - [salmonela dataset](source/data/sal_outbrk.csv)
