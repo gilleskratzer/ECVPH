@@ -40,12 +40,14 @@ multivariate analysis of animal health data using the R package [abn](https://cr
 
 | Time         | Topic                          | Material|
 |--------------|--------------------------------|---------|
-| Morning      | Methods for risk factor analysis||
-|              | Hands-on exercises         |         |
+| Morning      | Methods for risk factor analysis| [Presentation](source/Presentations/gk_risk_factor_ana.pdf)  |
+|              | Hands-on exercises         | [Exercice](exo_risk_fact_ana.html) <br>  [Solution Salmonella](sol_risk_fact_ana.html)        |
 | 12:30 - 13:30| <span style="color:blue"> Lunch </span> ||
-| Afternoon    | ABN in a nutshell |         |
+| Afternoon    | ABN in a nutshell |  [Presentation](source/Presentations/gk_intro_abn.pdf)       |
 |              | Hands-on exercises          |         |
 
+
+*Social event: 18:00 Apéro. 19:00 Dinner*
 
 
 **Thursday 09.05.2019**
