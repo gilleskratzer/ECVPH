@@ -1,0 +1,102 @@
+---
+title: "Solution to Hands-on exercise: Simulation of an ABN model"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+# Manually simulate abn data
+
+* Generate a dataframe of 1000 observations, based on the following set of statements (purely gaussian network): Z influences X (0.7), z influences y (0.5), x influnences y (1). All nodes have a random error. 
+
+```{r}
+set.seed(42)
+
+n <- 1000
+z <- rnorm(n = n,mean = 0,sd = 0.1)
+x <- 0.7*z + rnorm(n = n,mean = 0,sd = 0.1)
+y <- 1*x + 0.5*z + rnorm(n = n,mean = 0,sd = 0.1)
+
+df <- data.frame(x,y,z)
+
+```
+
+* Using buildscorecache() and mostprobable() retrieve the simulated network
+
+```{r}
+dist <- list(x = "gaussian",y = "gaussian",z = "gaussian")
+
+bsc <- buildscorecache(data.df = df,data.dists = dist,max.parents = 2)
+
+dag <- mostprobable(score.cache = bsc)
+
+plotabn(dag.m = (dag),data.dists = dist,edgedir = "cp")
+
+```
+
+
+
+# Simulate data using abn functions
+
+* Using simulateabn() simulate dataset from the given DAG. You need to define a number of observations, a matrix of parameters and a matrix of variance
+
+```{r}
+dist <- list(a="gaussian",
+b="gaussian",
+c="gaussian",
+d="gaussian", 
+e="binomial", 
+f="binomial")
+
+plotabn(dag.m = ~a|b:c:e+b|c:d:f+e|f,data.dists = dist ,plot = TRUE)
+
+```
+
+```{r}
+#define parameter matrix
+data.param <- matrix(data = c(1,2,0.5,0,20,0,
+                              0,1,3,10,0, 0.8,
+                              0,0,1,0,0,0,
+                              0,0,0,1,0,0,
+                              0,0,0,0,0.5,1,
+                              0,0,0,0,0,0),nrow = 6L,ncol = 6L,byrow = TRUE)
+
+#precision matrix 
+data.param.var <- matrix(data = 0,nrow = 6L,ncol = 6L)
+diag(data.param.var) <- c(10,20,30,40,0,0)
+
+#simulate the data
+df <- simulateabn(data.dists = dist,
+n.chains = 1,
+n.thin = 1,
+n.iter = 1000,
+data.param = data.param,
+data.param.var = data.param.var,
+seed = 132)
+
+```
+
+* Based on the simulated dataset perform a BN search using buildscorecache() and mostprobable()
+
+```{r}
+bsc <- buildscorecache(data.df = df,data.dists = dist,max.parents = 2)
+
+dag <- mostprobable(score.cache = bsc)
+
+plotabn(dag.m = (dag),data.dists = dist,edgedir = "cp")
+
+```
+
+* Optional: perform a heuristic search.
+
+```{r}
+bsc <- buildscorecache(data.df = df,data.dists = dist,max.parents = 2)
+
+dag <- search.heuristic(score.cache = bsc,score = "mlik",data.dists = dist,max.parents = 1,num.searches = 500,max.steps = 100)
+
+plotabn(dag.m = (dag$dag),data.dists = dist,edgedir = "cp")
+
+```

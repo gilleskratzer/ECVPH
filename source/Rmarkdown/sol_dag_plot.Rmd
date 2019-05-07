@@ -1,0 +1,124 @@
+---
+title: "Solution to Hands-on exercise: DAG plotting"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+# Introduction
+
+Multiple alternative exists to plot Directed Acyclic Graphs ( = DAGs = Bayesian Networks = Networks = graphs = structures). 
+
+* abn internal functions
+* Rgraphviz/DiagrammeR
+* ggdag
+
+The exact solution depends on your needs: quick visualization? paper output? interactive plotting? causal? observational analysis? fully compatible abn?
+
+All plotting solutions requires a structure definition ... but they are different.
+
+# ABN 
+
+In ABN the workhorse function for plotting is *plotabn()* that uses Rgraphviz under the hood. This function Plot an ABN DAG using formula statement or a matrix.
+
+* load abn
+
+```{r}
+library(abn)
+```
+
+
+* Taken that rows are children and columns are parent create a simple adjacency matrix representing the network: A -> B -> C. In using *?plotabn* what do you need additionally to plot it?
+
+```{r}
+DAG <- matrix(data = 0,nrow = 3,ncol = 3)
+DAG[2,1] <- DAG[3,2] <- 1
+
+dist<-list(A="gaussian",
+           B="gaussian",
+           C="gaussian")
+
+colnames(DAG) <- rownames(DAG) <- names(dist)
+
+```
+
+
+```
+
+* Plot the DAG
+
+```{r}
+
+plotabn(dag.m = DAG,data.dists = dist)
+
+```
+
+* Using a formula statement plot the network: A -> B -> C
+
+```{r}
+
+plotabn(dag.m = ~C|B+B|A,data.dists = dist)
+
+```
+
+* Generate an adjacency using formula statement
+
+```{r}
+
+ex.m <- plotabn(dag.m = ~C|B+B|A,data.dists = dist,plot = FALSE)
+
+```
+
+
+# Rgraphviz
+
+* load the R package Rgraphviz. Using the abn function tographviz() plot the previous graph using command line.
+
+```{r}
+library("Rgraphviz")
+
+df <- data.frame(A =1, B=1, C=1)
+
+tographviz(dag.m = ex.m,data.df = df,data.dists = dist, outfile="graph.dot",directed=TRUE)
+
+```
+
+* optional*: using `https://www.bioconductor.org/packages/devel/bioc/vignettes/Rgraphviz/inst/doc/Rgraphviz.pdf` change node color.
+
+* Using the Rpackage DiagrammeR, read the dot file created above.
+
+```{r}
+?grViz
+```
+
+# ggdag
+
+* Load the Rpackage ggdag, plot the very same DAG as before. 
+
+```{r}
+library(ggdag)
+dag  <- dagify(C~B,
+               B~A)
+
+ggdag_classic(dag, size = 6) + theme_dag()
+```
+
+* *Optional*: One strength of ggdag is to interprete causal graphs. Inspiring by the vignette (https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html) plot some causal interpretations
+
+```{r}
+dag  <- dagify(C~B,
+               B~A,
+labels = c("A" = "Cardiac\n Arrest", 
+                  "B" = "Smoking",
+                  "C" = "Cholesterol"),
+       exposure = "B",
+       outcome = "A")
+
+ggdag(dag, text = TRUE, use_labels = "label")
+
+ggdag_paths(dag, text = FALSE, use_labels = "label")
+```
+

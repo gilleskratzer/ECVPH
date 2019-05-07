@@ -1,0 +1,27 @@
+---
+title: "Solution to Hands-on exercise: Descriptive statistics: PID ADG"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+This data set focusses on the inter-relationships among respiratory diseases (atrophic rhinitis and enzootic pneumonia), ascarid levels and daily weight gain.
+
+# Summary statistics for the data set pig.adg
+
+* Import the data set pig.adg
+
+* How many variables and how many observations are in the data set?
+
+* Which format do the variables have? Is this correct (otherwise change)
+
+* Are there are any missing values?
+
+* Table the categorical and the ordinal variables?
+
+* Assess by appropriate descriptive statistics (incl. also plots) if the average daily weight gain is associated with other variables in the data set?
+
+* Are the scores for the atrophic rhinitis and the enzootic pneumonia possibly associated?

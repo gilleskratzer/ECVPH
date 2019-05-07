@@ -1,0 +1,81 @@
+---
+title: "Solution to Hands-on exercise: Descriptive statistics: Salmonella outbreak"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+This data set focusses on an investigation of an Salmonella outbreak, a case control study.
+
+Data from an investigation of an outbreak of Salmonella in Funen County of Denmark in 1996. The data consisted of 39 cases od S. Typhimurium pahge type 12 and 73 controls matched for age, sex and municipality of residence. Data on numerous food exposures were recorded and a small subset of those data are included in the dataset sal_outbrk.
+
+Reference: Molbak K, Hald D. An outbreak of Salmonella Typhimurium in the county of Funnen during the summer. A case-controlled study. Ugeskr Laeger. 1997; 159: 36. 
+
+# Summary statistics for the data set sal.outbrk
+
+* Import the data set sal.outbrk
+
+```{r}
+salm <- read.csv("data/sal_outbrk.csv", 
+                header = TRUE, sep = ";")
+```
+
+* How many variables and how many observations are in the data set?
+
+* Which format do the variables have? Is this correct (otherwise change)
+
+```{r}
+dim(salm)
+str(salm)
+```
+
+```{r}
+salm$gender <- as.factor(salm$gender)
+salm$casecontrol <- as.factor(salm$casecontrol)
+salm$eatbeef <- as.factor(salm$eatbeef)
+salm$eatpork <- as.factor(salm$eatpork)
+salm$eatveal <- as.factor(salm$eatveal)
+salm$eatlamb <- as.factor(salm$eatlamb)
+salm$eatpoul <- as.factor(salm$eatpoul)
+salm$eatcold <- as.factor(salm$eatcold)
+salm$eatveg <- as.factor(salm$eatveg)
+salm$eatfruit <- as.factor(salm$eatfruit)
+salm$eateggs <- as.factor(salm$eateggs)
+salm$slt_a <- as.factor(salm$slt_a)
+salm$dlr_a <- as.factor(salm$dlr_a)
+salm$dlr_b <- as.factor(salm$dlr_b)
+```
+
+* Are there are any missing values?
+
+* Table the categorical variables
+
+```{r}
+summary(salm)
+```
+
+* Table the cases and controls with all potential risk factors
+
+```{r}
+table(salm$casecontrol,salm$eatbeef)
+table(salm$casecontrol,salm$eatpork)
+table(salm$casecontrol,salm$eatveal)
+table(salm$casecontrol,salm$eatlamb)
+table(salm$casecontrol,salm$eatpoul)
+table(salm$casecontrol,salm$eatcold)
+table(salm$casecontrol,salm$eatveg)
+table(salm$casecontrol,salm$eatfruit)
+table(salm$casecontrol,salm$eateggs)
+table(salm$casecontrol,salm$slt_a)
+table(salm$casecontrol,salm$dlr_a)
+table(salm$casecontrol,salm$dlr_b)
+```
+
+* Assess by appropriate descriptive statistics (incl. also plots) if the cases and controls are associated with other variables in the data set?
+
+```{r}
+mosaicplot(~ casecontrol + eatbeef + eatpork, data = salm)
+```

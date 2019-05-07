@@ -1,0 +1,95 @@
+---
+title: "Solution to Hands-on exercise: Descriptive statistics: PID ADG"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+This data set focusses on the inter-relationships among respiratory diseases (atrophic rhinitis and enzootic pneumonia), ascarid levels and daily weight gain.
+
+# Summary statistics for the data set pig.adg
+
+* Import the data set pig.adg
+
+```{r}
+pigs <- read.csv("data/pig_adg.csv", 
+                header = TRUE, sep = ";")
+```
+
+* How many variables and how many observations are in the data set?
+
+* Which format do the variables have? Is this correct (otherwise change)
+
+
+```{r}
+dim(pigs)
+str(pigs)
+```
+
+```{r}
+pigs$farm <- as.factor(pigs$farm)
+pigs$pig <- as.factor(pigs$pig)
+pigs$sex <- as.factor(pigs$sex)
+pigs$pn <- as.factor(pigs$pn)
+pigs$ar2 <- as.factor(pigs$ar2)
+pigs$luf <- as.factor(pigs$lu)
+pigs$lif <- as.factor(pigs$li)
+```
+
+```{r}
+summary(pigs)
+```
+
+* Are there are any missing values?
+
+* Table the categorical and the ordinal variables?
+
+```{r}
+table(pigs$farm)
+table(pigs$sex)
+table(pigs$pn)
+```
+
+* Assess by appropriate descriptive statistics (incl. also plots) if the average daily weight gain is associated with other variables in the data set?
+
+```{r}
+tapply(pigs$adg,pigs$sex,mean)
+boxplot(adg ~ sex, data = pigs)
+
+plot(adg ~ dtm, data = pigs)
+
+plot(adg ~ mm, data = pigs)
+
+tapply(pigs$adg,pigs$ar,mean)
+boxplot(adg ~ ar, data = pigs)
+
+tapply(pigs$adg,pigs$ar2,mean)
+boxplot(adg ~ ar2, data = pigs)
+
+tapply(pigs$adg,pigs$lu,mean)
+boxplot(adg ~ lu, data = pigs)
+
+tapply(pigs$adg,pigs$pn,mean)
+boxplot(adg ~ pn, data = pigs)
+
+plot(adg ~ epg5, data = pigs)
+
+plot(adg ~ worms, data = pigs)
+
+tapply(pigs$adg,pigs$li,mean)
+boxplot(adg ~ li, data = pigs)
+```
+
+* Are the scores for the atrophic rhinitis and the enzootic pneumonia possibly associated?
+
+```{r}
+table(pigs$ar,pigs$lu)
+table(pigs$ar2,pigs$pn)
+```
+
+```{r}
+mosaicplot(~ pn + ar2 + li, data = pigs)
+```

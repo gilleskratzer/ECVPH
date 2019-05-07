@@ -1,0 +1,33 @@
+---
+title: "Solution to Hands-on exercise: Descriptive statistics: Salmonella outbreak"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+This data set focusses on an investigation of an Salmonella outbreak, a case control study.
+
+Data from an investigation of an outbreak of Salmonella in Funen County of Denmark in 1996. The data consisted of 39 cases od S. Typhimurium pahge type 12 and 73 controls matched for age, sex and municipality of residence. Data on numerous food exposures were recorded and a small subset of those data are included in the dataset sal_outbrk.
+
+Reference: Molbak K, Hald D. An outbreak of Salmonella Typhimurium in the county of Funnen during the summer. A case-controlled study. Ugeskr Laeger. 1997; 159: 36. 
+
+# Summary statistics for the data set sal.outbrk
+
+* Import the data set sal.outbrk
+
+* How many variables and how many observations are in the data set?
+
+* Which format do the variables have? Is this correct (otherwise change)
+
+
+* Are there are any missing values?
+
+* Table the categorical variables
+
+* Table the cases and controls with all potential risk factors
+
+* Assess by appropriate descriptive statistics (incl. also plots) if the cases and controls are associated with other variables in the data set?
+

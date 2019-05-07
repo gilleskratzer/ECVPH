@@ -1,0 +1,201 @@
+---
+title: "Hands-on exercises: PIG ADG"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+&nbsp;
+
+For this hands-on exercise, we will use an adaptation of the **pig_adg** dataset described in *Dohoo, Martin and Wayne - Veterinary Epidemiologic Research (second edition)*. This hands-on exercice has been jointly written with Arianna Comin (SVA). 
+
+<!-- availble at: http://projects.upei.ca/ver/data-and-samples/ -->
+
+&nbsp;
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, collapse=FALSE,
+                      fig.align='center', fig.height=3, fig.width=5, comment = NA)
+
+
+options(scipen=999)
+
+dt <- readRDS("dataOK.RDS")
+
+
+library(knitr)
+library(kableExtra)
+
+```
+
+Let's start by loading the data into the working environment:  
+
+`dt <- readRDS("Path_to_your_file/dataOK.RDS")`
+
+&nbsp;
+
+
+The data for this exercise consist of **`r nrow(dt)`** observations of **`r ncol(dt)`** variables. Here is an extract of the first rows:  
+
+
+```{r dataoverview, echo=TRUE, cache=FALSE}
+head(dt)
+```
+
+&nbsp;
+
+The meaning of each variable is the following: 
+
+```{r dataMeaning, echo=FALSE, cache=FALSE}
+mm <- data.frame(Variable = colnames(dt),
+                 Meaning = c("presence of atrophic rhinitis (0/1)",
+                             "presence of pneumonia (0/1)",
+                             "presence of moderate to severe pneumonia (0/1)",
+                             "sex of the pig (1=female, 0=castrated)",
+                             "presence of liver damage (parasite-induced white spots) (0/1)", 
+                             "presence of fecal/gastrointestinal nematode eggs at time of slaughter (0/1)",
+                             "fecal gastriointestinal nematode egg count at time of slaughter (eggs/5g)",
+                             "presece of nematodes in intestine (0/1)",
+                             "count of nematodes in small intestine at time of slaughter (nr.)",
+                             "days elapsed from birth to slaughter (days)",
+                             "average daily weight gain (grams)",
+                             "farm ID"))
+
+kable(mm, row.names = FALSE, digits = 2, align = "ll", "html") %>%
+  kable_styling(bootstrap_options = "striped", full_width = F, position = "left") 
+
+```
+
+
+* Plot the distribution of each variable:
+
+* For this exercise we will drop some variables, namely *pneum*, *eggs*, *wormCount* and *farm*:  
+
+### Set all binary variables to FACTOR (and check that dataset is complete) 
+
+* A requirement of *abn* is that all binary variables are coerced into factors.
+
+### Create network matrix
+
+* Let's start by creating a network matrix, where the result of the model search (i.e. optimal DAG) will be stored. The size of the matrix will be equal to the variables to be included in the model, i.e. the number of columns of the dataframe containing our data to be analysed. The network matrix needs also to have named rows and columns, with the same names as in the dataframe. 
+
+### Setup the distribution list for each variable  
+
+* Each variable in the model needs to be associated to a distribution (currently available: binomial, Gaussian, Poisson) according to the type of data. In this example most of the variables are binary and therefore associated to the **binomial** distribution. Variables *age* and *adg* are continuous and fairly normally distributed, so they will be associated to the **Gaussian** distribution. Finally, variable **wormCount** is a count and can be approximated by a **Poisson** distribution. 
+
+### Create retain and banned matrixes (empty)  
+
+* Prior knowledge about data structure, that could guide the search for the optimal model, can be included by forcing or banning some specific arcs from being considered in the final DAG. This is done by providing a **retain matrix** and/or a **ban matrix**. We will start by creating two empty matrices with the same size as our data and named rows and columns.
+
+### Ban some arcs (optional)
+
+* The information encoded in the ban matrix is *subjectively chosen* to reflect our **belief about data structure**. In this example, it is reasonable to assume that none of the variables in the model is going to affect the gender of the animal (which is an inborn trait). To encode this information we will ban all the arcs going to *female*, by setting their value to 1 (banned) as opposite to the default value 0 (non banned).  
+
+How does it work?
+
+Rows are children, columns parents:   
+`.   b1 b2 b3 b4`  
+`b1   0  1  0  0`  
+`b2   0  0  0  0`  
+`b3   1  0  0  0`  
+`b4   0  0  0  0`  
+
+So `ban[1, 2] <- 1`  means do not allow the arc from b2 (second column) to b1 (first row) and `ban[3, 1] <- 1` means do not allow the arc from b1 (first column) to b3 (third row).
+
+* Now, we want to ban the arcs going from any variable (= all columns except the third) to *female* (= third row):  
+
+### Try to run one search  
+
+&nbsp;
+
+To make the search more efficient, we constrain the maximum number of parents allowed for each node. We will start from 1 and increase subsequently until the *network score* does not improve further even when more parents are allowed. 
+
+* Start with 1 parent as maximum limit (for computational reason). Build a cache of all local computations. Run the EXACT SEARCH for the specified parent limit
+
+* Fit marginal densities
+
+* Check network score
+
+### Try a general search
+
+* Run the exact search across incremental parent limits 
+Repeat last step for incremental parent limit (e.g. 1 to nr.var-1). The optimal DAG is the one where the network score does not improve (i.e. becomes bigger) any longer by allowing more parents.  
+
+* Retrieve maximum marginal likelihood to compare models
+
+* Retrieve best fitting model and visualize DAG
+
+* The function `tographviz()`creates a `.dot` file which can be further read with the external software **GraphViz**. Use it to generate a plot of the DAG.
+
+
+### Parametric bootstrapping 
+
+Before going ahead interpreting the results, we need one more step. So far, we have identified a DAG which has the maximum possible goodness of fit according to the log marginal likelihood. This is the standard goodness of fit metric in Bayesian modelling and includes an implicit penalty for model complexity. However, the log marginal likelihood is also known to be prone to **overfitting** (especially with smaller data sets), meaning that it may identify more parameters than can be actually justified by the data. Therefore, it is advisable to check and address potential overfitting before drawing any conclusion based on the model results. 
+
+A well established approach for addressing overfitting is to use **parametric bootstrapping**. Basically, the model chosen from the exact search will be used to generate many bootstrap datasets (e.g. 500 for time constrains. But in a real analysis 10k would be better) of equal size to the original dataset. Each bootstrap dataset will be then treated as if it were the original data, and a globally optimal DAG will be identified exactly as described before (i.e. exact search). We will therefore get as many DAGs as the number of simulated datasets (e.g. 5000 in the solution). To address overfitting, any arcs in the DAG from the original data which will not be recovered in > 50% of the bootstrap DAGs will be deemed to have insufficient statistical support to be considered robust. 
+
+&nbsp;
+
+
+This step will be done with the aid of a software for Bayesian statistical analysis using Markov Chain Monte Carlo (MCMC) simulations (we will use **JAGS**, but any other is fine). We will use the parameters estimated from our model to build a *BUG* model to simulate data. In other words, we will do the reverse process: instead of using data to estimate parameters, we will use parameters to estimate data. 
+
+&nbsp;
+
+* Extract parameters from best fitting model and save them for MCMC simulations. Extract the marginals from the fitabn() function. Store them using the dump()
+
+* Write the BUG model
+
+In order to simulate the variables of our dataset we need to provide a model for each of them, using the aforementioned parameters estimates. For instance, the binomial node *AR* in our DAG has one incoming arc coming from the node *age*. In a regression notation this would be translated into:  
+
+<p style="text-align: center;">logit(*AR*) = $\alpha$ + $\beta$ x *age* + $\epsilon$</a></p>
+        
+      
+where $\alpha$ is the intercept and $\beta$ the regression coefficient for variable *age* and $\epsilon$ is the error term modelled by a binomial distribution.  
+
+Given that we will simulate the data in a Bayesian framework, AR will be modelled as a probability distribution. Therefore it will look like:  
+
+`AR ~ dbern(probAR);`  
+`logit(probAR) <- alpha + beta*age;`  
+
+Then, the values of alpha and beta will be sampled (dcat) from our discrete distribution of parameters:  
+
+`alpha.prob ~ dcat(AR.p[ ,2]);` --> sample from the vector of density values f(x) (second column in matrix)  
+`alpha ~ AR.p[alpha.prob,1];`   --> corresponding x value for the sampled density (first column in matrix)  
+`beta.prob ~ dcat(AR.p[ ,4]);`  
+`beta ~ AR.p[beta.prob,1];`   
+ 
+&nbsp; 
+
+The BUG file (*model8vPois.bug*) can be retrieved from the *file* directory.
+
+&nbsp;
+
+* Run JAGS and inspect the result of a simulated dataset
+
+* Iterate dataset simulation + exact search over and over
+
+What we will do is to create a loop to 1) simulate data, 2) do exact search on such data, and 3) store the best fitting DAG  over and over for many times (e.g. 5000 iterations). Bootstrap data need to be saved in a folder to be further inspected.
+
+* Find the final pruned DAG. To do so, load all the bootstrap DAGs.
+
+* Then check what was the most frequent number of arcs:
+
+* Prune the DAG
+
+* Plot the final **pruned DAG**
+
+* Extract marginal posterior density for each parameter. The marginal posterior densities (marginals) represent the density distribution of the parameters at each arc.
+
+* *Optional:* Visually inspect the marginal posterior distributions of the parameters
+
+* *Optional:* Calculate the area under the density curve
+
+* Get the table of quantiles for the marginals
+
+* *Optional:* Calculate the link strenght
+
+* Present final results
+

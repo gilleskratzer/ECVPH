@@ -1,0 +1,37 @@
+---
+title: "Solution to Hands-on exercise: Risk factor analysis"
+fontsize: 12pt
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+# Introduction
+
+Data from an investigation of an outbreak of Salmonella in Funen County of Denmark in 1996. The data consisted of 39 cases od S. Typhimurium pahge type 12 and 73 controls matched for age, sex and municipality of residence. Data on numerous food exposures were recorded and a small subset of those data are included in the dataset sal.outbrk.
+
+Reference: Molbak K, Hald D. An outbreak of Salmonella Typhimurium in the county of Funnen during the summer. A case-controlled study. Ugeskr Laeger. 1997; 159: 36. 
+
+* Import the data set sal.outbrk and format the variables
+
+# glm: p-values and change of estimates
+
+* fit a glm() model to the dataset make a summary, what is the AIC? which covariate are important for modelling? 
+
+* restrict to complete case and re-fit. What changes do you observe?
+
+* Compute the change in estimates if the model is not adjusted for age and gender.
+
+# StepAIC
+
+* perform a stepAIC model selection and compare with previous model
+
+# Random Forest
+
+* load the R package Boruta. Using ?Boruta perform variables selection on salmonella dataset. Interpret the output.
+
+# Varrank
+
+* load the R package varrank Using ?varrank perform variables selection on salmonella dataset. Interpret the output.

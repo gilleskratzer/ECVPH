@@ -1,0 +1,44 @@
+---
+title: "Hands-on exercise: test installation"
+fontsize: 12pt
+output:
+  html_document: 
+    toc: true
+    toc_depth: 2
+    code_download: true
+---
+
+&nbsp;
+
+The purpose of this exercice is to test if the required sofware are install and run properly.
+
+# Installation
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, collapse=FALSE,
+                      fig.align='center', fig.height=3, fig.width=5, comment = NA)
+
+
+options(scipen=999)
+
+```
+
+
+
+1. Install [R](https://www.r-project.org/)
+2. Install [RStudio](https://www.rstudio.com/) (not mandatory but strongly recommended)
+3. Install [abn](https://cran.r-project.org/package=abn):
+```r
+install.packages("abn")
+```
+4. Install [INLA](http://www.r-inla.org/)
+```r
+install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+```
+5. Install [Rgraphviz](http://www.bioconductor.org/packages/release/bioc/html/Rgraphviz.html)
+```r
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Rgraphviz", version = "3.8")
+```
+6. Install [JAGS](http://mcmc-jags.sourceforge.net/). Operating System dependant
